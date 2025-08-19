@@ -1,3 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Atualiza pacotes no Termux (opcional, mas recomendado para evitar erros)
+pkg update -y && pkg upgrade -y
+
+# Instala o Node.js se ainda não estiver instalado
+if ! command -v node &> /dev/null; then
+    echo "Instalando Node.js..."
+    pkg install nodejs -y
+fi
+
+# Cria uma nova pasta para o projeto
+mkdir -p coracoes_auto
+cd coracoes_auto
+
+# Cria o arquivo index.html com o conteúdo HTML completo
+cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -54,7 +71,7 @@
     <div id="mensagem">
         <div id="titulo">𝑨𝒎𝒐𝒓</div>
         <div id="texto">
-            Amor, eu só queria dizer o quanto eu sou feliz de estar com você. Mesmo fazendo pouco tempo que a gente tá junto, já sinto que é algo muito especial. Você tem um sorriso lindo que me encanta de um jeito único, e além disso, você é muito fofinha, o que só me deixa ainda mais apaixonado por você. 💖✨
+            Amor, eu sei que às vezes você pode se sentir insegura, mas quero que saiba de uma coisa: eu te amo demais. Você é muito especial para mim e nunca, nunca vou te largar. Cada momento ao seu lado é importante, e eu valorizo cada pedacinho de você. Não importa o que aconteça, eu estou aqui, sempre ao seu lado, te apoiando e te amando do jeito que você merece. 💖
         </div>
     </div>
     <script>
@@ -74,8 +91,21 @@
             }, 10000);
         }
 
-        // Cria corações a cada 100ms
+        // Cria corações a cada 100ms, começando imediatamente
         setInterval(createHeart, 100);
     </script>
 </body>
 </html>
+EOF
+
+# Instala o http-server se ainda não estiver instalado
+if ! command -v http-server &> /dev/null; then
+    echo "Instalando http-server..."
+    npm install -g http-server
+else
+    echo "http-server já está instalado."
+fi
+
+# Inicia o servidor na porta 8080
+echo "Iniciando o servidor na porta 8080..."
+http-server -p 8080
