@@ -106,6 +106,6 @@ else
     echo "http-server já está instalado."
 fi
 
-# Inicia o servidor na porta 8080
-echo "Iniciando o servidor na porta 8080..."
-http-server -p 8080
+# Inicia o servidor na porta 8000
+echo "Iniciando o servidor na porta 8000..."
+http-server -p 8000
