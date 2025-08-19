@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corações Flutuantes</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #mensagem {
+            position: fixed;
+            z-index: 10;
+            max-width: 80%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #titulo {
+            font-size: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+        }
+        #texto {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            user-select: none;
+            animation: float 10s linear infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mensagem">
+        <div id="titulo">𝑨𝒎𝒐𝒓</div>
+        <div id="texto">
+            Amor, eu só queria dizer o quanto eu sou feliz de estar com você. Mesmo fazendo pouco tempo que a gente tá junto, já sinto que é algo muito especial. Você tem um sorriso lindo que me encanta de um jeito único, e além disso, você é muito fofinha, o que só me deixa ainda mais apaixonado por você. 💖✨
+        </div>
+    </div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            // Array com diferentes emojis de coração
+            const hearts = ['❤️', '💖', '💕', '💞', '💓', '💗', '💜', '💙', '💚'];
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's'; // Duração entre 5 e 10 segundos
+            document.body.appendChild(heart);
+
+            // Remove o coração após a animação
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Cria corações a cada 100ms
+        setInterval(createHeart, 100);
+    </script>
+</body>
+</html>
