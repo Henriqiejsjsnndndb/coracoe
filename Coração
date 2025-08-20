@@ -71,7 +71,7 @@ cat << 'EOF' > index.html
     <div id="mensagem">
         <div id="titulo">𝑨𝒎𝒐𝒓</div>
         <div id="texto">
-            Amor, eu sei que às vezes você pode se sentir insegura, mas quero que saiba de uma coisa: eu te amo demais. Você é muito especial para mim e nunca, nunca vou te largar. Cada momento ao seu lado é importante, e eu valorizo cada pedacinho de você. Não importa o que aconteça, eu estou aqui, sempre ao seu lado, te apoiando e te amando do jeito que você merece. 💖
+            Amor, eu só queria dizer o quanto eu sou feliz de estar com você. Mesmo fazendo pouco tempo que a gente tá junto, já sinto que é algo muito especial. Você tem um sorriso lindo que me encanta de um jeito único, e além disso, você é muito fofinha, o que só me deixa ainda mais apaixonado por você. 💖✨
         </div>
     </div>
     <script>
@@ -106,6 +106,6 @@ else
     echo "http-server já está instalado."
 fi
 
-# Inicia o servidor na porta 8000
-echo "Iniciando o servidor na porta 8000..."
+# Inicia o servidor na porta 8080
+echo "Iniciando o servidor na porta 8080..."
 http-server -p 8080
